@@ -14,7 +14,11 @@ ENTRY = (
 )
 
 
+MAX_CHARS = 200
+
+
 def main() -> None:
+    assert len(ENTRY) <= MAX_CHARS, "entry exceeds character limit"
     output_path = "/output/entry.txt"
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
     with open(output_path, "w", encoding="utf-8", newline="\n") as f:
